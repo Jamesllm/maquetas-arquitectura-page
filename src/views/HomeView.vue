@@ -1,13 +1,13 @@
 <template>
   <div>
     <b-carousel id="carousel-fade" style="text-shadow: 0px 0px 2px #000" fade controls indicators>
-      <b-carousel-slide v-for="(carousel, c) in carousels" v-bind:key="c" :caption="carousel.caption"
+      <b-carousel-slide class="carousel-principal" v-for="(carousel, c) in carousels" v-bind:key="c" :caption="carousel.caption"
         :text="carousel.text" :img-src="carousel.img"></b-carousel-slide>
     </b-carousel>
 
     <b-container>
       <b-row class="mt-3">
-        <b-col lg="4" class="px-2 mb-4" v-for="(maqueta, m) in maquetas" v-bind:key="m">
+        <b-col lg="4" md="6" sm="6" class="px-2 mb-4" v-for="(maqueta, m) in maquetas" v-bind:key="m">
           <div class="card-maquetas">
             <b-img :src="maqueta.principalImg" fluid />
             <div class="card-maquetas-body">
@@ -38,8 +38,10 @@
                       <font-awesome-icon icon="fa-brands fa-whatsapp" />
                     </b-button>
                   </b-link>
-                  <b-alert show variant="info" class="mt-2">Todas las compras son exclusivamente realizadas mediante el aplicativo Whatsapp</b-alert>
-                  <b-alert show variant="warning">La entrega se realiza despues de haber realizado el pago correspondiente</b-alert>
+                  <b-alert show variant="info" class="mt-2">Todas las compras son exclusivamente realizadas mediante el
+                    aplicativo Whatsapp</b-alert>
+                  <b-alert show variant="warning">La entrega se realiza despues de haber realizado el pago
+                    correspondiente</b-alert>
                 </div>
               </b-col>
             </b-row>
@@ -137,7 +139,7 @@ export default {
             },
           ],
           detalles: [
-             "Maqueta + modelo 3d"
+            "Maqueta + modelo 3d"
           ]
         },
         {
@@ -193,15 +195,40 @@ export default {
 </script>
 
 <style lang="scss">
-.carousel-item img {
+@mixin mobile {
+  @media only screen and (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (max-width: 1280px) {
+    @content;
+  }
+}
+
+.carousel-principal img {
   height: 55em !important;
   width: 100% !important;
   object-fit: cover;
+
+  @include tablet(){
+    height: 35em !important;
+  }
+
+  @include mobile(){
+    height: 20em !important;
+  }
 }
 
 .modal-detail-img img {
   height: auto !important;
   max-height: 40em;
+
+  @include tablet(){
+    max-height: 20em !important;
+    object-fit: cover;
+  }
 }
 
 .card-maquetas {
