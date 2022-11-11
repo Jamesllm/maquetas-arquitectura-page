@@ -33,7 +33,7 @@
                     <li v-else>Costo de envio de acuerdo al destino</li>
                     <li v-for="(detalle, d) in maqueta.detalles" v-bind:key="d">{{ detalle }}</li>
                   </ul>
-                  <b-link :href="link + 'Hola 👋, me interesa la ' + maqueta.title" target="_blank">
+                  <b-link id="link" :href="`https://api.whatsapp.com/send?phone=${phone}Hola👋, me interesa la ${maqueta.title}`" target="_blank">
                     <b-button variant="success" block>Soliciar por Whatsapp
                       <font-awesome-icon icon="fa-brands fa-whatsapp" />
                     </b-button>
@@ -56,7 +56,7 @@
 export default {
   data() {
     return {
-      link: "https://api.whatsapp.com/send?phone=51979131314&text=",
+      phone: process.env.VUE_APP_NUMERO_PHONE,
       carousels: [
         {
           img: require("@/assets/img/1-AR.jpg"),
@@ -185,12 +185,7 @@ export default {
       ],
     };
   },
-  methods: {
-    enviarMensaje(title) {
-      const data = `https://api.whatsapp.com/send?phone=51979131314&text=${title}!!`
-      return data
-    }
-  }
+
 };
 </script>
 
