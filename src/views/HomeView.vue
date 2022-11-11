@@ -33,7 +33,7 @@
                     <li v-else>Costo de envio de acuerdo al destino</li>
                     <li v-for="(detalle, d) in maqueta.detalles" v-bind:key="d">{{ detalle }}</li>
                   </ul>
-                  <b-link id="link" :href="`https://api.whatsapp.com/send?phone=${phone}Hola👋, me interesa la ${maqueta.title}`" target="_blank">
+                  <b-link id="link" :href="`https://api.whatsapp.com/send?phone=${phone}&text=Hola👋, me interesa la ${maqueta.title}`" target="_blank">
                     <b-button variant="success" block>Soliciar por Whatsapp
                       <font-awesome-icon icon="fa-brands fa-whatsapp" />
                     </b-button>
