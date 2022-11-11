@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# MAQUETAS ARQUITECTURA
-=======
+
 # MAQUETAS ARQUITECTURA
 
->>>>>>> 9a83c83976359a49d5fdfede172dc100fb8c95aa
