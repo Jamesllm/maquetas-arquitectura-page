@@ -1,5 +1,2 @@
-# mag.drago.pe
+# MAQUETAS ARQUITECTURA
 
-Navbar Bootstrap
-
-Navbar Styles
