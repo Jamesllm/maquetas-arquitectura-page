@@ -54,6 +54,7 @@
 export default {
   data() {
     return {
+      link: "https://api.whatsapp.com/send?phone=51979131314&text=",
       carousels: [
         {
           img: require("@/assets/img/1-AR.jpg"),
@@ -123,10 +124,27 @@ export default {
           ]
         },
         {
+          principalImg: require("@/assets/img/casa/1.jpeg"),
+          title: "Fabrica - Modelo 3d",
+          categoria: "MODELO 3D",
+          md: "md-4",
+          imgs: [
+            {
+              img: require("@/assets/img/casa/1.jpeg"),
+            },
+            {
+              img: require("@/assets/img/casa/2.jpeg"),
+            },
+          ],
+          detalles: [
+             "Maqueta + modelo 3d"
+          ]
+        },
+        {
           principalImg: require("@/assets/img/site-solar/1.jpg"),
           title: "Maqueta del sistema solar",
           categoria: "GALAXIA",
-          md: "md-4",
+          md: "md-5",
           imgs: [
             {
               img: require("@/assets/img/site-solar/1.jpg"),
@@ -146,7 +164,7 @@ export default {
           principalImg: require("@/assets/img/site-circulatorio/1.jpg"),
           title: "Sistema Circulatorio",
           categoria: "PRIMARIA",
-          md: "md-5",
+          md: "md-6",
           imgs: [
             {
               img: require("@/assets/img/site-circulatorio/1.jpg"),
@@ -182,7 +200,8 @@ export default {
 }
 
 .modal-detail-img img {
-  height: 23rem !important;
+  height: auto !important;
+  max-height: 40em;
 }
 
 .card-maquetas {
